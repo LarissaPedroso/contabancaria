@@ -3,8 +3,8 @@ package conta.model;
 public class ContaCorrente extends Conta{
 	private float limite;
 
-	public ContaCorrente(String nomeTitular, int agencia, int numero, int tipo, float saldo, float limite) {
-		super(nomeTitular, agencia, numero, tipo, saldo);
+	public ContaCorrente(int numero, int agencia, int tipo, String titular, float saldo, float limite) {
+		super(numero, agencia, tipo, titular, saldo);
 		this.limite = limite;
 	}
 

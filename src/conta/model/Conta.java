@@ -2,34 +2,18 @@ package conta.model;
 
 public abstract class Conta {
 	
-	private String nomeTitular;
-	private int agencia;
 	private int numero;
+	private int agencia;
 	private int tipo;
+	private String titular;
 	private float saldo;
 	
-	public Conta(String nomeTitular, int agencia, int numero, int tipo, float saldo) {
-		this.nomeTitular = nomeTitular;
-		this.agencia = agencia;
+	public Conta(int numero, int agencia, int tipo, String titular, float saldo) {
 		this.numero = numero;
-		this.tipo = tipo;
-		this.saldo = saldo;
-	}
-
-	public String getNomeTitular() {
-		return nomeTitular;
-	}
-
-	public void setNomeTitular(String nomeTitular) {
-		this.nomeTitular = nomeTitular;
-	}
-
-	public int getAgencia() {
-		return agencia;
-	}
-
-	public void setAgencia(int agencia) {
 		this.agencia = agencia;
+		this.tipo = tipo;
+		this.titular = titular;
+		this.saldo = saldo;
 	}
 
 	public int getNumero() {
@@ -39,6 +23,14 @@ public abstract class Conta {
 	public void setNumero(int numero) {
 		this.numero = numero;
 	}
+	
+	public int getAgencia() {
+		return agencia;
+	}
+
+	public void setAgencia(int agencia) {
+		this.agencia = agencia;
+	}
 
 	public int getTipo() {
 		return tipo;
@@ -46,6 +38,14 @@ public abstract class Conta {
 
 	public void setTipo(int tipo) {
 		this.tipo = tipo;
+	}
+	
+	public String getNomeTitular() {
+		return titular;
+	}
+
+	public void setNomeTitular(String nomeTitular) {
+		this.titular = nomeTitular;
 	}
 
 	public float getSaldo() {
@@ -84,7 +84,7 @@ public abstract class Conta {
 		System.out.println("\n***********************************");
 		System.out.println("       Informações da Conta       ");
 		System.out.println("***********************************\n");
-		System.out.println("Nome do Titular: " + nomeTitular);
+		System.out.println("Nome do Titular: " + titular);
 		System.out.println("Agencia: " + agencia);
 		System.out.println("Número: " + numero);
 		System.out.println("Tipo: " + tipo);
