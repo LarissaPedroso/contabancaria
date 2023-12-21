@@ -89,11 +89,10 @@ public class ContaController implements ContaRepository{
     	var contaDestino = buscarNaCollection (numeroDestino);
     	
     	if (contaOrigem != null && contaDestino != null) {
-    		if(contaOrigem.sacar(valor) == true);
-    		contaDestino.depositar(valor);
-    		
-    		System.out.println("\nTransferência foi efetuada com sucesso!");
-    
+    		if(contaOrigem.sacar(valor) == true) {
+    			contaDestino.depositar(valor);
+    			System.out.println("\nTransferência foi efetuada com sucesso!");
+    		}
     	}else {
     		System.out.println("\nA conta de Origem e/ou Destino não foram encontradas!");
     	}
