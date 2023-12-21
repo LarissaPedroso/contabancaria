@@ -33,18 +33,6 @@ public class Menu {
 		ContaPoupanca cp2 = new ContaPoupanca(contas.gerarNumero(), 789, 2, "Newt Scamander", 2000.0f, 24);
 		contas.cadastrar(cp2);
 		
-		//Teste da Classe Conta Corrente
-		/*
-		 * ContaCorrente cc1 = new ContaCorrente(2, 123, 1, "Mariana", 15000.0f,
-		 * 1000.0f); cc1.visualizar(); cc1.sacar(12000.0f); cc1.visualizar();
-		 * cc1.depositar(5000.0f); cc1.visualizar();
-		 * 
-		 * //Teste da Classe Conta Poupança ContaPoupanca cp1 = new ContaPoupanca(3,
-		 * 123, 2, "Victor", 10000.0f, 15); cp1.visualizar(); cp1.sacar(1000.0f);
-		 * cp1.visualizar(); cp1.depositar(5000.0f); cp1.visualizar();
-		 */
-		
-		
 		//Menu
 		while(true) {
 			System.out.println(Cores.TEXT_YELLOW_BOLD);
@@ -81,10 +69,9 @@ public class Menu {
 				
 			switch (opcao) {
 			case 1:
-				System.out.print("\nCriar Conta\n\n");
+				System.out.print(Cores.TEXT_GREEN_BOLD + "\nCriar Conta\n\n" + Cores.TEXT_RESET);
 				System.out.print("Digite o Número da Agência: ");
 				agencia = leia.nextInt();
-				//leia.next();
 				System.out.print("Digite o Nome do Titular: \n");
 				leia.skip("\\R?");
 				titular = leia.nextLine();
@@ -112,19 +99,19 @@ public class Menu {
 				keyPress();
 				break;
 			case 2:
-				System.out.print("\nListar todas as Contas\n\n");
+				System.out.print(Cores.TEXT_GREEN_BOLD + "\nListar todas as Contas\n\n" + Cores.TEXT_RESET);
 				contas.listarTodas();
 				keyPress();
 				break;
 			case 3:
-				System.out.print("\nConsultar dados da Conta - por número\n\n");
+				System.out.print(Cores.TEXT_GREEN_BOLD + "\nConsultar dados da Conta - por número\n\n" + Cores.TEXT_RESET);
 				System.out.print("Digite o número da conta: ");
 				numero = leia.nextInt();
 				contas.procurarPorNumero(numero);
 				keyPress();
 				break;
 			case 4:
-				System.out.print("\nAtualizar dados da Conta\n\n");
+				System.out.print(Cores.TEXT_GREEN_BOLD + "\nAtualizar dados da Conta\n\n" + Cores.TEXT_RESET);
 				
 				System.out.print("Digite o número da conta: ");
 				numero = leia.nextInt();
@@ -164,14 +151,14 @@ public class Menu {
 				keyPress();
 				break;
 			case 5:
-				System.out.print("\nApagar a Conta\n\n");
+				System.out.print(Cores.TEXT_GREEN_BOLD + "\nApagar a Conta\n\n" + Cores.TEXT_RESET);
 				System.out.print("Digite o número da conta: ");
 				numero = leia.nextInt();
 				contas.deletar(numero);
 				keyPress();
 				break;
 			case 6:
-				System.out.print("\nSaque\n\n");
+				System.out.print(Cores.TEXT_GREEN_BOLD + "\nSaque\n\n" + Cores.TEXT_RESET);
 				System.out.print("Digite o número da conta: ");
 				numero = leia.nextInt();
 				do {
@@ -182,7 +169,7 @@ public class Menu {
 				keyPress();
 				break;
 			case 7:
-				System.out.print("\nDepósito\n\n");
+				System.out.print(Cores.TEXT_GREEN_BOLD + "\nDepósito\n\n" + Cores.TEXT_RESET);
 				System.out.print("Digite o número da conta: ");
 				numero = leia.nextInt();
 				do {
@@ -193,7 +180,7 @@ public class Menu {
 				keyPress();
 				break;
 			case 8:
-				System.out.print("\nTransferência entre Contas\n\n");
+				System.out.print(Cores.TEXT_GREEN_BOLD + "\nTransferência entre Contas\n\n" + Cores.TEXT_RESET);
 				System.out.print("Digite o número da conta de origem: ");
 				numero = leia.nextInt();
 				System.out.print("Digite o número da conta de destino: ");
@@ -207,11 +194,12 @@ public class Menu {
 				keyPress();
 				break;
 			default:
-				System.out.print("\nOpção Inválida!\n");
+				System.out.print(Cores.TEXT_GREEN_BOLD + "\nOpção Inválida!\n" + Cores.TEXT_RESET);
 				break;
 			}
 		}
 	}
+	
 	public static void sobre() {
 		System.out.println("\n***********************************");
 		System.out.println("Projeto Desenvolvido por: Larissa Pedroso");
@@ -226,8 +214,6 @@ public class Menu {
 			System.in.read();
 		}catch(IOException e) {
 			System.out.println("Você pressiounou uma tecla diferente de enter!");
-		}
-		
+		}	
 	}
-
 }
